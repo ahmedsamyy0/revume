@@ -15,6 +15,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Github, Mail } from "lucide-react";
+import { signInAction } from "@/lib/actions/auth";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -55,7 +56,11 @@ export default function LoginPage() {
           </CardHeader>
           <CardContent className="grid gap-4">
             <div className="grid grid-cols-2 gap-2">
-              <Button variant="outline" className="w-full">
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={signInAction}
+              >
                 <Github className="mr-2 h-4 w-4" />
                 GitHub
               </Button>
